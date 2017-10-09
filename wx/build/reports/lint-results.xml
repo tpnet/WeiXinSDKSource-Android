@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="4" by="lint 2.3.3">
+
+    <issue
+        id="DefaultLocale"
+        severity="Warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`."
+        category="Correctness"
+        priority="6"
+        summary="Implied default locale in case conversion"
+        explanation="Calling `String#toLowerCase()` or `#toUpperCase()` *without specifying an explicit locale* is a common source of bugs. The reason for that is that those methods will use the current locale on the user&apos;s device, and even though the code appears to work correctly when you are developing the app, it will fail in some locales. For example, in the Turkish locale, the uppercase replacement for `i` is *not* `I`.&#xA;&#xA;If you want the methods to just perform ASCII replacement, for example to convert an enum name, call `String#toUpperCase(Locale.US)` instead. If you really want to use the current locale, call `String#toUpperCase(Locale.getDefault())` instead."
+        url="http://developer.android.com/reference/java/util/Locale.html#default_locale"
+        urls="http://developer.android.com/reference/java/util/Locale.html#default_locale"
+        errorLine1="                String toLowerCase = toCharsString.toCharsString().toLowerCase();"
+        errorLine2="                                                                   ~~~~~~~~~~~">
+        <location
+            file="C:\Users\Litp\Desktop\WXTest\wx\src\main\java\com\tencent\mm\opensdk\openapi\WXApiImplComm.java"
+            line="29"
+            column="68"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        severity="Warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        category="Correctness"
+        priority="6"
+        summary="Implied default locale in case conversion"
+        explanation="Calling `String#toLowerCase()` or `#toUpperCase()` *without specifying an explicit locale* is a common source of bugs. The reason for that is that those methods will use the current locale on the user&apos;s device, and even though the code appears to work correctly when you are developing the app, it will fail in some locales. For example, in the Turkish locale, the uppercase replacement for `i` is *not* `I`.&#xA;&#xA;If you want the methods to just perform ASCII replacement, for example to convert an enum name, call `String#toUpperCase(Locale.US)` instead. If you really want to use the current locale, call `String#toUpperCase(Locale.getDefault())` instead."
+        url="http://developer.android.com/reference/java/util/Locale.html#default_locale"
+        urls="http://developer.android.com/reference/java/util/Locale.html#default_locale"
+        errorLine1="                            Log.e(&quot;MicroMsg.SDK.GetQRCodeResult&quot;, String.format(&quot;resp errcode = %d&quot;, new Object[]{Integer.valueOf(i)}));"
+        errorLine2="                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Litp\Desktop\WXTest\wx\src\main\java\com\tencent\mm\opensdk\diffdev\a\d.java"
+            line="53"
+            column="67"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        severity="Warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        category="Correctness"
+        priority="6"
+        summary="Implied default locale in case conversion"
+        explanation="Calling `String#toLowerCase()` or `#toUpperCase()` *without specifying an explicit locale* is a common source of bugs. The reason for that is that those methods will use the current locale on the user&apos;s device, and even though the code appears to work correctly when you are developing the app, it will fail in some locales. For example, in the Turkish locale, the uppercase replacement for `i` is *not* `I`.&#xA;&#xA;If you want the methods to just perform ASCII replacement, for example to convert an enum name, call `String#toUpperCase(Locale.US)` instead. If you really want to use the current locale, call `String#toUpperCase(Locale.getDefault())` instead."
+        url="http://developer.android.com/reference/java/util/Locale.html#default_locale"
+        urls="http://developer.android.com/reference/java/util/Locale.html#default_locale"
+        errorLine1="                                        Log.e(&quot;MicroMsg.SDK.GetQRCodeResult&quot;, String.format(&quot;writeToFile fail, qrcodeBuf length = %d&quot;, new Object[]{Integer.valueOf(decode.length)}));"
+        errorLine2="                                                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Litp\Desktop\WXTest\wx\src\main\java\com\tencent\mm\opensdk\diffdev\a\d.java"
+            line="80"
+            column="79"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        severity="Warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        category="Correctness"
+        priority="6"
+        summary="Implied default locale in case conversion"
+        explanation="Calling `String#toLowerCase()` or `#toUpperCase()` *without specifying an explicit locale* is a common source of bugs. The reason for that is that those methods will use the current locale on the user&apos;s device, and even though the code appears to work correctly when you are developing the app, it will fail in some locales. For example, in the Turkish locale, the uppercase replacement for `i` is *not* `I`.&#xA;&#xA;If you want the methods to just perform ASCII replacement, for example to convert an enum name, call `String#toUpperCase(Locale.US)` instead. If you really want to use the current locale, call `String#toUpperCase(Locale.getDefault())` instead."
+        url="http://developer.android.com/reference/java/util/Locale.html#default_locale"
+        urls="http://developer.android.com/reference/java/util/Locale.html#default_locale"
+        errorLine1="                                    Log.d(&quot;MicroMsg.SDK.GetQRCodeResult&quot;, String.format(&quot;parse succ, save in memory, uuid = %s, appname = %s, imgBufLength = %d&quot;, new Object[]{aVar.p, aVar.q, Integer.valueOf(aVar.u.length)}));"
+        errorLine2="                                                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Litp\Desktop\WXTest\wx\src\main\java\com\tencent\mm\opensdk\diffdev\a\d.java"
+            line="88"
+            column="75"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        severity="Warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        category="Correctness"
+        priority="6"
+        summary="Implied default locale in case conversion"
+        explanation="Calling `String#toLowerCase()` or `#toUpperCase()` *without specifying an explicit locale* is a common source of bugs. The reason for that is that those methods will use the current locale on the user&apos;s device, and even though the code appears to work correctly when you are developing the app, it will fail in some locales. For example, in the Turkish locale, the uppercase replacement for `i` is *not* `I`.&#xA;&#xA;If you want the methods to just perform ASCII replacement, for example to convert an enum name, call `String#toUpperCase(Locale.US)` instead. If you really want to use the current locale, call `String#toUpperCase(Locale.getDefault())` instead."
+        url="http://developer.android.com/reference/java/util/Locale.html#default_locale"
+        urls="http://developer.android.com/reference/java/util/Locale.html#default_locale"
+        errorLine1="        Log.d(&quot;MicroMsg.SDK.GetQRCodeTask&quot;, String.format(&quot;doInBackground, url = %s, time consumed = %d(ms)&quot;, new Object[]{format, Long.valueOf(System.currentTimeMillis() - currentTimeMillis)}));"
+        errorLine2="                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Litp\Desktop\WXTest\wx\src\main\java\com\tencent\mm\opensdk\diffdev\a\d.java"
+            line="186"
+            column="45"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        severity="Warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        category="Correctness"
+        priority="6"
+        summary="Implied default locale in case conversion"
+        explanation="Calling `String#toLowerCase()` or `#toUpperCase()` *without specifying an explicit locale* is a common source of bugs. The reason for that is that those methods will use the current locale on the user&apos;s device, and even though the code appears to work correctly when you are developing the app, it will fail in some locales. For example, in the Turkish locale, the uppercase replacement for `i` is *not* `I`.&#xA;&#xA;If you want the methods to just perform ASCII replacement, for example to convert an enum name, call `String#toUpperCase(Locale.US)` instead. If you really want to use the current locale, call `String#toUpperCase(Locale.getDefault())` instead."
+        url="http://developer.android.com/reference/java/util/Locale.html#default_locale"
+        urls="http://developer.android.com/reference/java/util/Locale.html#default_locale"
+        errorLine1="                    Log.d(&quot;MicroMsg.SDK.NoopingResult&quot;, String.format(&quot;nooping uuidStatusCode = %d&quot;, Integer.valueOf(v0.x)));"
+        errorLine2="                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Litp\Desktop\WXTest\wx\src\main\java\com\tencent\mm\opensdk\diffdev\a\f.java"
+            line="46"
+            column="57"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        severity="Warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        category="Correctness"
+        priority="6"
+        summary="Implied default locale in case conversion"
+        explanation="Calling `String#toLowerCase()` or `#toUpperCase()` *without specifying an explicit locale* is a common source of bugs. The reason for that is that those methods will use the current locale on the user&apos;s device, and even though the code appears to work correctly when you are developing the app, it will fail in some locales. For example, in the Turkish locale, the uppercase replacement for `i` is *not* `I`.&#xA;&#xA;If you want the methods to just perform ASCII replacement, for example to convert an enum name, call `String#toUpperCase(Locale.US)` instead. If you really want to use the current locale, call `String#toUpperCase(Locale.getDefault())` instead."
+        url="http://developer.android.com/reference/java/util/Locale.html#default_locale"
+        urls="http://developer.android.com/reference/java/util/Locale.html#default_locale"
+        errorLine1="            Log.d(&quot;MicroMsg.SDK.NoopingTask&quot;, String.format(&quot;nooping, url = %s, errCode = %s, uuidStatusCode = %d, time consumed = %d(ms)&quot;, new Object[]{str, aVar.o.toString(), Integer.valueOf(aVar.x), Long.valueOf(currentTimeMillis2 - currentTimeMillis)}));"
+        errorLine2="                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Litp\Desktop\WXTest\wx\src\main\java\com\tencent\mm\opensdk\diffdev\a\f.java"
+            line="113"
+            column="47"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        severity="Warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        category="Correctness"
+        priority="6"
+        summary="Implied default locale in case conversion"
+        explanation="Calling `String#toLowerCase()` or `#toUpperCase()` *without specifying an explicit locale* is a common source of bugs. The reason for that is that those methods will use the current locale on the user&apos;s device, and even though the code appears to work correctly when you are developing the app, it will fail in some locales. For example, in the Turkish locale, the uppercase replacement for `i` is *not* `I`.&#xA;&#xA;If you want the methods to just perform ASCII replacement, for example to convert an enum name, call `String#toUpperCase(Locale.US)` instead. If you really want to use the current locale, call `String#toUpperCase(Locale.getDefault())` instead."
+        url="http://developer.android.com/reference/java/util/Locale.html#default_locale"
+        urls="http://developer.android.com/reference/java/util/Locale.html#default_locale"
+        errorLine1="            Log.e(&quot;MicroMsg.SDK.NoopingTask&quot;, String.format(&quot;nooping fail, errCode = %s, uuidStatusCode = %d&quot;, new Object[]{aVar.o.toString(), Integer.valueOf(aVar.x)}));"
+        errorLine2="                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Litp\Desktop\WXTest\wx\src\main\java\com\tencent\mm\opensdk\diffdev\a\f.java"
+            line="127"
+            column="47"/>
+    </issue>
+
+    <issue
+        id="OldTargetApi"
+        severity="Warning"
+        message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details."
+        category="Correctness"
+        priority="6"
+        summary="Target SDK attribute is not targeting latest version"
+        explanation="When your application runs on a version of Android that is more recent than your `targetSdkVersion` specifies that it has been tested with, various compatibility modes kick in. This ensures that your application continues to work, but it may look out of place. For example, if the `targetSdkVersion` is less than 14, your app may get an option button in the UI.&#xA;&#xA;To fix this issue, set the `targetSdkVersion` to the highest available value. Then test your app to make sure everything works correctly. You may want to consult the compatibility notes to see what changes apply to each version you are adding support for: http://developer.android.com/reference/android/os/Build.VERSION_CODES.html"
+        url="http://developer.android.com/reference/android/os/Build.VERSION_CODES.html"
+        urls="http://developer.android.com/reference/android/os/Build.VERSION_CODES.html"
+        errorLine1="        targetSdkVersion 21"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="C:\Users\Litp\Desktop\WXTest\wx\build.gradle"
+            line="9"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="Old buildToolsVersion 25.0.0; recommended version is 25.0.3 or later"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    buildToolsVersion &apos;25.0.0&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="C:\Users\Litp\Desktop\WXTest\wx\build.gradle"
+            line="5"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="PackageManagerGetSignatures"
+        severity="Information"
+        message="Reading app signatures from getPackageInfo: The app signatures could be exploited if not validated properly; see issue explanation for details."
+        category="Security"
+        priority="8"
+        summary="Potential Multiple Certificate Exploit"
+        explanation="Improper validation of app signatures could lead to issues where a malicious app submits itself to the Play Store with both its real certificate and a fake certificate and gains access to functionality or information it shouldn&apos;t have due to another application only checking for the fake certificate and ignoring the rest. Please make sure to validate all signatures returned by this method."
+        url="https://bluebox.com/technical/android-fake-id-vulnerability/"
+        urls="https://bluebox.com/technical/android-fake-id-vulnerability/"
+        errorLine1="                return validateAppSignature(context, context.getPackageManager().getPackageInfo(str, 64).signatures, z);"
+        errorLine2="                                                                                                     ~~">
+        <location
+            file="C:\Users\Litp\Desktop\WXTest\wx\src\main\java\com\tencent\mm\opensdk\openapi\WXApiImplComm.java"
+            line="45"
+            column="102"/>
+    </issue>
+
+    <issue
+        id="PackageManagerGetSignatures"
+        severity="Information"
+        message="Reading app signatures from getPackageInfo: The app signatures could be exploited if not validated properly; see issue explanation for details."
+        category="Security"
+        priority="8"
+        summary="Potential Multiple Certificate Exploit"
+        explanation="Improper validation of app signatures could lead to issues where a malicious app submits itself to the Play Store with both its real certificate and a fake certificate and gains access to functionality or information it shouldn&apos;t have due to another application only checking for the fake certificate and ignoring the rest. Please make sure to validate all signatures returned by this method."
+        url="https://bluebox.com/technical/android-fake-id-vulnerability/"
+        urls="https://bluebox.com/technical/android-fake-id-vulnerability/"
+        errorLine1="            PackageInfo packageInfo = this.context.getPackageManager().getPackageInfo(&quot;com.tencent.mm&quot;, 64);"
+        errorLine2="                                                                                                        ~~">
+        <location
+            file="C:\Users\Litp\Desktop\WXTest\wx\src\main\java\com\tencent\mm\opensdk\openapi\WXApiImplV10.java"
+            line="343"
+            column="105"/>
+    </issue>
+
+    <issue
+        id="WrongConstant"
+        severity="Error"
+        message="Must be one or more of: PackageManager.GET_ACTIVITIES, PackageManager.GET_CONFIGURATIONS, PackageManager.GET_GIDS, PackageManager.GET_INSTRUMENTATION, PackageManager.GET_INTENT_FILTERS, PackageManager.GET_META_DATA, PackageManager.GET_PERMISSIONS, PackageManager.GET_PROVIDERS, PackageManager.GET_RECEIVERS, PackageManager.GET_SERVICES, PackageManager.GET_SHARED_LIBRARY_FILES, PackageManager.GET_SIGNATURES, PackageManager.GET_URI_PERMISSION_PATTERNS, PackageManager.MATCH_UNINSTALLED_PACKAGES, PackageManager.MATCH_DISABLED_COMPONENTS, PackageManager.MATCH_DISABLED_UNTIL_USED_COMPONENTS, PackageManager.MATCH_SYSTEM_ONLY, PackageManager.GET_DISABLED_COMPONENTS, PackageManager.GET_DISABLED_UNTIL_USED_COMPONENTS, PackageManager.GET_UNINSTALLED_PACKAGES"
+        category="Security"
+        priority="6"
+        summary="Incorrect constant"
+        explanation="Ensures that when parameter in a method only allows a specific set of constants, calls obey those rules."
+        errorLine1="                return validateAppSignature(context, context.getPackageManager().getPackageInfo(str, 64).signatures, z);"
+        errorLine2="                                                                                                     ~~">
+        <location
+            file="C:\Users\Litp\Desktop\WXTest\wx\src\main\java\com\tencent\mm\opensdk\openapi\WXApiImplComm.java"
+            line="45"
+            column="102"/>
+    </issue>
+
+    <issue
+        id="WrongConstant"
+        severity="Error"
+        message="Must be one or more of: PackageManager.GET_META_DATA, PackageManager.GET_SHARED_LIBRARY_FILES, PackageManager.MATCH_UNINSTALLED_PACKAGES, PackageManager.MATCH_SYSTEM_ONLY, PackageManager.MATCH_DISABLED_UNTIL_USED_COMPONENTS, PackageManager.GET_DISABLED_UNTIL_USED_COMPONENTS, PackageManager.GET_UNINSTALLED_PACKAGES"
+        category="Security"
+        priority="6"
+        summary="Incorrect constant"
+        explanation="Ensures that when parameter in a method only allows a specific set of constants, calls obey those rules."
+        errorLine1="                    wxappPayEntryClassname = context.getPackageManager().getApplicationInfo(&quot;com.tencent.mm&quot;, 128).metaData.getString(&quot;com.tencent.mm.BuildInfo.OPEN_SDK_PAY_ENTRY_CLASSNAME&quot;, null);"
+        errorLine2="                                                                                                              ~~~">
+        <location
+            file="C:\Users\Litp\Desktop\WXTest\wx\src\main\java\com\tencent\mm\opensdk\openapi\WXApiImplV10.java"
+            line="209"
+            column="111"/>
+    </issue>
+
+    <issue
+        id="WrongConstant"
+        severity="Error"
+        message="Must be one or more of: PackageManager.GET_META_DATA, PackageManager.GET_SHARED_LIBRARY_FILES, PackageManager.MATCH_UNINSTALLED_PACKAGES, PackageManager.MATCH_SYSTEM_ONLY, PackageManager.MATCH_DISABLED_UNTIL_USED_COMPONENTS, PackageManager.GET_DISABLED_UNTIL_USED_COMPONENTS, PackageManager.GET_UNINSTALLED_PACKAGES"
+        category="Security"
+        priority="6"
+        summary="Incorrect constant"
+        explanation="Ensures that when parameter in a method only allows a specific set of constants, calls obey those rules."
+        errorLine1="                    i = this.context.getPackageManager().getApplicationInfo(&quot;com.tencent.mm&quot;, 128).metaData.getInt(&quot;com.tencent.mm.BuildInfo.OPEN_SDK_VERSION&quot;, 0);"
+        errorLine2="                                                                                              ~~~">
+        <location
+            file="C:\Users\Litp\Desktop\WXTest\wx\src\main\java\com\tencent\mm\opensdk\openapi\WXApiImplV10.java"
+            line="250"
+            column="95"/>
+    </issue>
+
+    <issue
+        id="WrongConstant"
+        severity="Error"
+        message="Must be one or more of: PackageManager.GET_ACTIVITIES, PackageManager.GET_CONFIGURATIONS, PackageManager.GET_GIDS, PackageManager.GET_INSTRUMENTATION, PackageManager.GET_INTENT_FILTERS, PackageManager.GET_META_DATA, PackageManager.GET_PERMISSIONS, PackageManager.GET_PROVIDERS, PackageManager.GET_RECEIVERS, PackageManager.GET_SERVICES, PackageManager.GET_SHARED_LIBRARY_FILES, PackageManager.GET_SIGNATURES, PackageManager.GET_URI_PERMISSION_PATTERNS, PackageManager.MATCH_UNINSTALLED_PACKAGES, PackageManager.MATCH_DISABLED_COMPONENTS, PackageManager.MATCH_DISABLED_UNTIL_USED_COMPONENTS, PackageManager.MATCH_SYSTEM_ONLY, PackageManager.GET_DISABLED_COMPONENTS, PackageManager.GET_DISABLED_UNTIL_USED_COMPONENTS, PackageManager.GET_UNINSTALLED_PACKAGES"
+        category="Security"
+        priority="6"
+        summary="Incorrect constant"
+        explanation="Ensures that when parameter in a method only allows a specific set of constants, calls obey those rules."
+        errorLine1="            PackageInfo packageInfo = this.context.getPackageManager().getPackageInfo(&quot;com.tencent.mm&quot;, 64);"
+        errorLine2="                                                                                                        ~~">
+        <location
+            file="C:\Users\Litp\Desktop\WXTest\wx\src\main\java\com\tencent\mm\opensdk\openapi\WXApiImplV10.java"
+            line="343"
+            column="105"/>
+    </issue>
+
+    <issue
+        id="ObsoleteSdkInt"
+        severity="Warning"
+        message="Unnecessary; SDK_INT is always >= 12"
+        category="Performance"
+        priority="6"
+        summary="Obsolete SDK_INT Version Check"
+        explanation="This check flags version checks that are not necessary, because the `minSdkVersion` (or surrounding known API level) is already at least as high as the version checked for."
+        errorLine1="        if (VERSION.SDK_INT >= 11) {"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Litp\Desktop\WXTest\wx\src\main\java\com\tencent\mm\opensdk\diffdev\a\a.java"
+            line="41"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="ObsoleteSdkInt"
+        severity="Warning"
+        message="Unnecessary; SDK_INT is always >= 12"
+        category="Performance"
+        priority="6"
+        summary="Obsolete SDK_INT Version Check"
+        explanation="This check flags version checks that are not necessary, because the `minSdkVersion` (or surrounding known API level) is already at least as high as the version checked for."
+        errorLine1="            if (VERSION.SDK_INT >= 11) {"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Litp\Desktop\WXTest\wx\src\main\java\com\tencent\mm\opensdk\diffdev\a\d.java"
+            line="197"
+            column="17"/>
+    </issue>
+
+</issues>

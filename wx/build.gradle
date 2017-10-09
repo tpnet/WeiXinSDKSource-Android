@@ -1,0 +1,30 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '25.0.0'
+
+    defaultConfig {
+        minSdkVersion 12
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+
+    useLibrary 'org.apache.http.legacy'
+
+    lintOptions{
+        abortOnError  false
+    }
+
+}
+
+task makeJar(type: Copy) {
+    delete 'build/libs/test.jar'
+    from('build/intermediates/bundles/debug/')
+    into('build/libs/')
+    include('classes.jar')
+    rename('classes.jar', 'weixinsdk.jar')
+}
+
+makeJar.dependsOn(build)
